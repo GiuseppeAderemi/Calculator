@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcuator</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            box-sizing: border-box;
+        }
+        body{
+            margin: 50px;
+            background-color: beige;
+        }
+        .boxcal{
+            width: 200px;
+            height: 400px;
+            border-radius: 10px;
+            background-color: grey;
+        }
+        #result{
+            width: 60px;
+            height: 30px;
+            margin: 30px 70px 10px;
+
+            text-align: center;
+            border: 1px gray;
+        }
+        .box{
+            width: 150px;
+            height: 30px;
+            margin: 10px 25px;
+            text-align: center;
+            border: 1px gray;
+        }
+        .container{
+            margin-top: 30px;
+        }
+        .btn{
+            width: auto;
+            height: 30px;
+            padding: 4px;
+            margin: 4px 4px;
+        }
+        .divmod{
+            margin: 10px 30px;
+        }
+        .reset{
+
+            margin: 10px 60px;
+        }
+    </style>
+</head>
+<body>
+    <div class="boxcal">
+            <input type="text" id="result" readonly>
+            <input type="number" id="first" placeholder="First number" class="box">
+            <input type="number" id="second" placeholder="Second number" class="box">
+            <div class="container">
+                <button id="add" class="btn" onclick="addNum()">Add</button>
+                <button id="sub" class="btn" onclick="subNum()">Subtract</button>
+                <button id="mul" class="btn" onclick="mulNum()">Multiply</button>
+              <div class="divmod">
+                <button id="div" class="btn" onclick="divNum()">Divide</button>
+                <button id="mod" class="btn" onclick="modNum()">Modulus</button>
+              </div>
+              <div class="reset">
+                <button id="reset" class="btn" onclick="reset()">Reset</button>
+              </div>
+            </div>
+    </div>
+    <script>
+        function addNum(){
+            const number1 =
+            parseFloat(document.getElementById("first").value);
+            const number2 =
+            parseFloat(document.getElementById("second").value);
+            const result = number1 + number2;
+            document.getElementById("result").value = result;
+        }
+        function subNum(){
+            const number1 =
+            parseFloat(document.getElementById("first").value);
+            const number2 =
+            parseFloat(document.getElementById("second").value);
+            const result = number1 - number2;
+            document.getElementById("result").value = result;
+        }
+        function mulNum(){
+            const number1 =
+            parseFloat(document.getElementById("first").value);
+            const number2 =
+            parseFloat(document.getElementById("second").value);
+            const result = number1 * number2;
+            document.getElementById("result").value = result;
+        }
+        function divNum(){
+            const number1 =
+            parseFloat(document.getElementById("first").value);
+            const number2 =
+            parseFloat(document.getElementById("second").value);
+            const result = number1 / number2;
+            document.getElementById("result").value = result;
+        }
+        function modNum(){
+            const number1 =
+            parseFloat(document.getElementById("first").value);
+            const number2 =
+            parseFloat(document.getElementById("second").value);
+            const result = number1 % number2;
+            document.getElementById("result").value = result;
+        }
+        function reset(){
+            document.getElementById("first").value ='';
+            document.getElementById("second").value ='';
+            document.getElementById("result").value ='';
+        }
+    </script>
+</body>
+</html>
